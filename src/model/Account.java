@@ -1,18 +1,19 @@
 package model;
 
+import util.BankStatement;
 import util.Transactions;
 
-public abstract class Account implements Transactions{
+public abstract class Account implements Transactions, BankStatement{
 	
 	private static final Integer BANK_BRANCH = 1;
 	private static Integer counter = 1;
 	
 	private Integer bankBranch;
 	private Integer accountNumber;
-	private Double balance;
+	private double balance;
 	private Client client;
 	
-	public Account(Integer accountNumber, Client client) {
+	public Account(Client client) {
 		this.bankBranch = BANK_BRANCH;
 		this.accountNumber = counter;
 		this.client = client;

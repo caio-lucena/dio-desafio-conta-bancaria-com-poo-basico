@@ -2,7 +2,7 @@ package util;
 
 public class ValidateAccountType {
 	
-	public static boolean validateClientType(String accountType) {
+	public static boolean validateAccountType(String accountType) {
 		
 		boolean condition = accountType.equalsIgnoreCase("CC") || accountType.equalsIgnoreCase("CP");
 		
