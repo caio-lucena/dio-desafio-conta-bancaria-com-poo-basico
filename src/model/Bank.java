@@ -20,5 +20,12 @@ public class Bank {
 	public void removeAccount(Account account) {
 		accountList.remove(account);
 	}
+	
+	public void listAccounts() {
+						
+		accountList.forEach(x ->{
+			x.printBankStatement();
+		});
+	}
 
 }

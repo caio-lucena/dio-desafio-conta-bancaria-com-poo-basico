@@ -6,6 +6,11 @@ import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
+import model.Account;
+import model.Bank;
+import util.CreateAccount;
+import util.Menu;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -13,14 +18,30 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
 		Integer condition;
+		Account account;
+		Bank dioBank = new Bank();
 
-		try {
-					
+		try {					
 			
 			do {
 				
+				Menu.showMenu();
+				
+				System.out.print("Opção: ");
+				
 				condition = scanner.nextInt();
 				
+				switch (condition) {
+				
+					case 1:
+						account = CreateAccount.createAccount();
+						dioBank.addAccount(account);
+						break;
+					case 4:
+						dioBank.listAccounts();
+						break;					
+					
+				}
 				
 				
 			}
