@@ -1,13 +1,13 @@
 package app;
 
-//TODO refatorar o código para evitar repetições e desenvolver uma lógica para efetuar transações
+//TODO refatorar o código para evitar repetições e desenvolver uma lógica para efetuar transações. Reavaliar uso da Interface Transactions
 
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
-import model.Account;
-import model.Bank;
+import model.bank.Account;
+import model.bank.Bank;
 import util.CreateAccount;
 import util.Menu;
 

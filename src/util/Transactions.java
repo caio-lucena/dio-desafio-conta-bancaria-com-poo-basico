@@ -1,6 +1,6 @@
 package util;
 
-import model.Account;
+import model.bank.Account;
 
 public interface Transactions {
 	

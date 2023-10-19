@@ -1,4 +1,4 @@
-package model;
+package model.client;
 
 public class Address {
 	

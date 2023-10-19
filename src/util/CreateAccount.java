@@ -3,11 +3,11 @@ package util;
 import java.util.Locale;
 import java.util.Scanner;
 
-import model.Account;
-import model.Address;
-import model.CheckingAccount;
-import model.Client;
-import model.SavingsAcccount;
+import model.bank.Account;
+import model.bank.CheckingAccount;
+import model.bank.SavingsAcccount;
+import model.client.Address;
+import model.client.Client;
 import model.enums.ClientType;
 
 public class CreateAccount {

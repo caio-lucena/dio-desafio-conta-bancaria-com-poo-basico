@@ -1,5 +1,6 @@
-package model;
+package model.bank;
 
+import model.client.Client;
 import util.BankStatement;
 import util.Transactions;
 
@@ -10,7 +11,7 @@ public abstract class Account implements Transactions, BankStatement{
 	
 	private Integer bankBranch;
 	private Integer accountNumber;
-	private double balance;
+	protected double balance;
 	private Client client;
 	
 	public Account(Client client) {
@@ -28,18 +29,7 @@ public abstract class Account implements Transactions, BankStatement{
 	}
 
 	@Override
-	public void withdraw(Double ammount) {
-		
-		String ammountString = String.format("%.2f", ammount);
-		
-		if (ammount > this.balance) {
-			System.out.println("Não há saldo suficiente na conta para realizar esta operação de R$ " + ammountString);
-		}
-		else {
-			this.balance -= ammount;
-		}
-		
-	}
+	public abstract void withdraw(Double ammount);
 
 	@Override
 	public void transfer(Double ammount, Account account) {
