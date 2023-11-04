@@ -1,13 +1,15 @@
-package model.bank;
+package util;
 
+import model.bank.Account;
 import model.client.Client;
 
-public class CheckingAccount extends Account{
+public class SavingsAcccount extends Account {
 
-	public CheckingAccount(Client client) {
+	public SavingsAcccount(Client client) {
 		super(client);
+		
 	}
-
+	
 	@Override
 	public void printBankStatement() {
 		
@@ -24,7 +26,7 @@ public class CheckingAccount extends Account{
 	}
 
 	@Override
-	public void withdraw(Double ammount) {
+	public void withdraw(Double ammount){
 		
 		String ammountString = String.format("%.2f", ammount);
 		
@@ -32,7 +34,7 @@ public class CheckingAccount extends Account{
 			System.out.println("Não há saldo suficiente na conta para realizar esta operação de R$ " + ammountString);
 		}
 		else {
-			this.balance -= ammount;
+			this.balance -= (ammount + 0.10);
 		}
 		
 	}
