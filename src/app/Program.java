@@ -36,14 +36,20 @@ public class Program {
 					case 1:
 						account = CreateAccount.createAccount();
 						dioBank.addAccount(account);
+					case 2:
+						//TODO depósito
+						break;
+					case 3:
+						//TODO saque
 						break;
 					case 4:
 						dioBank.listAccounts();
-						break;					
+						break;
+					case 5:
+						System.exit(0);
 					
 				}
-				
-				
+								
 			}
 			while(condition != 0);	
 
