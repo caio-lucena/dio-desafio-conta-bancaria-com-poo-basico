@@ -1,8 +1,8 @@
 package model.bank;
 
 import model.client.Client;
-import util.BankStatement;
-import util.Transactions;
+import util.interfaces.BankStatement;
+import util.interfaces.Transactions;
 
 public abstract class Account implements Transactions, BankStatement{
 	

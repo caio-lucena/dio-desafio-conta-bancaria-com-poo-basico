@@ -1,4 +1,4 @@
-package util;
+package util.implementation;
 
 import java.util.Locale;
 import java.util.Scanner;

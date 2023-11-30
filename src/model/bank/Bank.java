@@ -27,5 +27,9 @@ public class Bank {
 			x.printBankStatement();
 		});
 	}
+	
+	public Account getAccountByNumber(Integer accountNumber) {		
+		return accountList.get(accountNumber-1);		
+	}
 
 }

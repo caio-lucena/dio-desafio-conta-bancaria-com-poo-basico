@@ -1,6 +1,6 @@
 package app;
 
-//TODO refatorar o código para evitar repetições e desenvolver uma lógica para efetuar transações. Reavaliar uso da Interface Transactions
+//TODO implementar transferência entre contas e fazer tratamento de excessões
 
 import java.util.InputMismatchException;
 import java.util.Locale;
@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 import model.bank.Account;
 import model.bank.Bank;
-import util.CreateAccount;
-import util.Menu;
+import util.implementation.CreateAccount;
+import util.implementation.Menu;
 
 public class Program {
 
@@ -20,6 +20,10 @@ public class Program {
 		Integer condition;
 		Account account;
 		Bank dioBank = new Bank();
+		
+		Integer accountNumber;
+		Double depositAmmount;
+		Double withdrawAmmount;
 
 		try {					
 			
@@ -36,11 +40,23 @@ public class Program {
 					case 1:
 						account = CreateAccount.createAccount();
 						dioBank.addAccount(account);
+						break;
 					case 2:
-						//TODO depósito
+						System.out.print("Por favor informe o número da conta a receber o depósito: ");
+						accountNumber = scanner.nextInt();
+						System.out.print("Agora o informe o valor para depósito: ");
+						depositAmmount = scanner.nextDouble();
+						account = dioBank.getAccountByNumber(accountNumber);
+						account.deposit(depositAmmount);
+						
 						break;
 					case 3:
-						//TODO saque
+						System.out.print("Favor informe o número da conta para ser sacada: ");
+						accountNumber = scanner.nextInt();
+						System.out.print("Agora informe o valor para ser sacado: ");
+						withdrawAmmount = scanner.nextDouble();
+						account = dioBank.getAccountByNumber(accountNumber);
+						account.withdraw(withdrawAmmount);
 						break;
 					case 4:
 						dioBank.listAccounts();

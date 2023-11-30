@@ -1,4 +1,4 @@
-package util;
+package util.interfaces;
 
 import model.bank.Account;
 
