@@ -1,6 +1,6 @@
 package app;
 
-//TODO implementar transferência entre contas e fazer tratamento de excessões
+//TODO fazer tratamento de excessões e validações de regras de negócio
 
 import java.util.InputMismatchException;
 import java.util.Locale;
@@ -24,6 +24,7 @@ public class Program {
 		Integer accountNumber;
 		Double depositAmmount;
 		Double withdrawAmmount;
+		Double transferAmmount;
 
 		try {					
 			
@@ -59,10 +60,27 @@ public class Program {
 						account.withdraw(withdrawAmmount);
 						break;
 					case 4:
+						System.out.print("Informe o número da conta que fará o despósito: ");
+						Integer accountNumberWithdraw = scanner.nextInt();
+						System.out.print("Agora informe o número da conta de destino: ");
+						Integer accountNumberDeposit = scanner.nextInt();
+						System.out.print("Informe o montante a ser depositado: ");
+						transferAmmount = scanner.nextDouble();
+						
+						Account withdrawAccount = dioBank.getAccountByNumber(accountNumberWithdraw);
+						Account depositAccount = dioBank.getAccountByNumber(accountNumberDeposit);
+						
+						withdrawAccount.transfer(transferAmmount, depositAccount);
+						
+						break;						
+					case 5:
 						dioBank.listAccounts();
 						break;
-					case 5:
+					case 6:
 						System.exit(0);
+					default:
+						System.out.println("Favor selecionar uma opção válida");
+						break;
 					
 				}
 								

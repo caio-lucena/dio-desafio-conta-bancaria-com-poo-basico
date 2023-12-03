@@ -12,7 +12,8 @@ public class Menu {
 				1 - Criar conta
 				2 - Depositar
 				3 - Sacar
-				4 - Listar clientes do banco
+				4 - Transfência entre constas
+				5 - Listar clientes do banco
 				0 - Sair do sistema
 				""";
 		
